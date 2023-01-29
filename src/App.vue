@@ -1,29 +1,23 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
+import MainContainer from "./components/MainContainer.vue";
 </script>
 
 <template>
-  <div class="pageContainer">
-    <nav class="navigationLinks">
+  <MainContainer>
+    <nav class="navigation-links">
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/tracker">Task Tracker</RouterLink>
       <RouterLink to="/characters">Characters</RouterLink>
+      <RouterLink to="/form">Form</RouterLink>
       <RouterLink to="/about">About</RouterLink>
     </nav>
     <RouterView />
-  </div>
+  </MainContainer>
 </template>
 
 <style scoped lang="scss">
-.pageContainer {
-  min-width: 15rem;
-  max-width: 44rem;
-  margin: 0 auto;
-  padding: 2rem;
-  border: 2px solid #bbb;
-  border-radius: 1rem;
-}
-.navigationLinks {
+.navigation-links {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;

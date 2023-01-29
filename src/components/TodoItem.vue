@@ -1,14 +1,14 @@
 <template>
-  <td class="checkboxColumn">
+  <td class="checkbox-column">
     <input
       type="checkbox"
       @change="$emit('invertComleted')"
       :checked="isCompleted"
     />
   </td>
-  <td class="nameColumn">{{ task }}</td>
+  <td class="name-column">{{ task }}</td>
   <td>
-    <button class="dangerButton" @click="$emit('deleteTodo')">Delete</button>
+    <button class="danger-button" @click="$emit('deleteTodo')">Delete</button>
   </td>
 </template>
 
@@ -29,7 +29,7 @@ const emit = defineEmits<Emits>();
 </script>
 
 <style scoped lang="scss">
-.dangerButton {
+.danger-button {
   height: 1.9rem;
   color: #ffffff;
   background-image: linear-gradient(-180deg, #c8511d 0%, #e16937 100%);
@@ -45,12 +45,12 @@ const emit = defineEmits<Emits>();
   }
 }
 
-.checkboxColumn {
+.checkbox-column {
   text-align: left;
   width: 10%;
 }
 
-.nameColumn {
+.name-column {
   word-break: break-all;
 }
 </style>

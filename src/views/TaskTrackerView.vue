@@ -1,23 +1,23 @@
 <template>
-  <h1 class="PageHeading">Task Tracker</h1>
-  <div class="flexContainer">
+  <h1 class="page-heading">Task Tracker</h1>
+  <div class="container">
     <input
       type="text"
       placeholder="Task name"
-      class="inputText"
+      class="input-text"
       @input="(event: any) => (state.inputValue = event.target.value)"
       :value="state.inputValue"
     />
-    <button class="regularButton" @click="addTodo()">Add Task</button>
+    <button class="regular-button" @click="addTodo()">Add Task</button>
   </div>
 
-  <div class="flexContainer">
+  <div class="container">
     <h3>Filter Tasks:</h3>
-    <button class="regularButton" @click="changeFilter('All')">All</button>
-    <button class="regularButton" @click="changeFilter('Completed')">
+    <button class="regular-button" @click="changeFilter('All')">All</button>
+    <button class="regular-button" @click="changeFilter('Completed')">
       Completed
     </button>
-    <button class="regularButton" @click="changeFilter('Active')">
+    <button class="regular-button" @click="changeFilter('Active')">
       Active
     </button>
   </div>
@@ -26,15 +26,15 @@
 
   <p v-if="filteredTodos.length === 0">No tasks found</p>
 
-  <table class="todoTable" v-else>
+  <table class="todos-table" v-else>
     <thead>
       <tr>
-        <th class="firstColumn">Status</th>
+        <th class="first-column">Status</th>
         <th>Name</th>
         <th>Actions</th>
       </tr>
     </thead>
-    <tbody class="tableBody">
+    <tbody class="table-body">
       <tr v-for="todo in filteredTodos" :key="todo.key">
         <TodoItem
           :task="todo.task"
@@ -127,14 +127,6 @@ const filteredTodos = computed((): Todo[] => {
 </script>
 
 <style scoped lang="scss">
-.PageHeading {
-  text-align: center;
-  justify-self: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
 
 $breakpoint-md: 27rem;
 
@@ -143,7 +135,7 @@ $breakpoint-md: 27rem;
     @content;
   }
 }
-.flexContainer {
+.container {
   display: flex;
   flex-wrap: wrap;
   gap: 0.3rem;
@@ -154,7 +146,7 @@ $breakpoint-md: 27rem;
   }
 }
 
-.regularButton {
+.regular-button {
   height: 1.9rem;
   color: #ffffff;
   background-image: linear-gradient(-180deg, #1d95c9 0%, #17759c 100%);
@@ -171,7 +163,7 @@ $breakpoint-md: 27rem;
   }
 }
 
-.todoTable {
+.todos-table {
   width: 100%;
   margin: 0 0;
   border-collapse: separate;
@@ -179,17 +171,17 @@ $breakpoint-md: 27rem;
   text-align: right;
 }
 
-.firstColumn {
+.first-column {
   text-align: left;
   width: min-content;
 }
 
-.tableBody {
+.table-body {
   border-top: 1px solid #555;
   font-weight: 300;
 }
 
-.inputText {
+.input-text {
   width: 100%;
   max-width: 15rem;
   height: 1.5rem;

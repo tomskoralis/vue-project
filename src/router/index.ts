@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import TaskTrackerView from "../views/TaskTrackerView.vue";
 import CharactersView from "../views/CharactersView.vue";
+import CharacterView from "../views/CharacterView.vue";
+import FormView from "../views/FormView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,6 +22,16 @@ const router = createRouter({
       path: "/characters",
       name: "characters",
       component: CharactersView,
+    },
+    {
+      path: "/characters/:id",
+      name: "character",
+      component: CharacterView,
+    },
+    {
+      path: "/form",
+      name: "form",
+      component: FormView,
     },
     {
       path: "/about",
